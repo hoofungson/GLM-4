@@ -1,6 +1,6 @@
 """
 
-This demo show the All tools and Long Context chat Capabilities of GLM-4.
+This demo show the All tools and Long Context chat Capabilities of SCGELING-AI-1.
 Please follow the Readme.md to run the demo.
 
 """
@@ -28,8 +28,8 @@ from tools.tool_registry import dispatch_tool, get_tools
 from utils import extract_pdf, extract_docx, extract_pptx, extract_text
 
 
-CHAT_MODEL_PATH = os.environ.get("CHAT_MODEL_PATH", "THUDM/glm-4-9b-chat")
-VLM_MODEL_PATH = os.environ.get("VLM_MODEL_PATH", "THUDM/glm-4v-9b")
+CHAT_MODEL_PATH = os.environ.get("CHAT_MODEL_PATH", "/mnt/workspace/.cache/modelscope/hub/ZhipuAI/scgeling-ai-indentity")
+VLM_MODEL_PATH = os.environ.get("VLM_MODEL_PATH", "/mnt/workspace/.cache/modelscope/hub/ZhipuAI/SCGELING-AI-1v-9b")
 
 USE_VLLM = os.environ.get("USE_VLLM", "0") == "1"
 USE_API = os.environ.get("USE_API", "0") == "1"
@@ -53,15 +53,15 @@ def append_conversation(
 
 
 st.set_page_config(
-    page_title="GLM-4 Demo",
+    page_title="SCGELING-AI-1 Demo",
     page_icon=":robot:",
     layout="centered",
     initial_sidebar_state="expanded",
 )
 
-st.title("GLM-4 Demo")
+st.title("SCGELING-AI-1 Demo")
 st.markdown(
-    "<sub>智谱AI 公开在线技术文档: https://zhipu-ai.feishu.cn/wiki/RuMswanpkiRh3Ok4z5acOABBnjf </sub> \n\n <sub> 更多 GLM-4 开源模型的使用方法请参考文档。</sub>",
+    "<sub>格领AI技术文档请联系格领研发部，更多SCGELING-AI-1模型的使用方法请参考文档。</sub>",
     unsafe_allow_html=True,
 )
 
@@ -135,11 +135,11 @@ page = st.radio(
 )
 
 HELP = """
-### 🎉 欢迎使用 GLM-4!
+### 🎉 欢迎使用SCGELING-AI-1!
 
 请在上方选取一个功能。每次切换功能时，将会重新加载模型并清空对话历史。
 
-文档解读模式与 VLM 模式仅支持在第一轮传入文档或图像。
+文档解读模式与VLM模式仅支持在第一轮传入文档或图像。
 """.strip()
 
 if page is None:
@@ -193,7 +193,7 @@ elif page == Mode.VLM:
         else:
             st.session_state.uploaded_image = None
 
-prompt_text = st.chat_input("Chat with GLM-4!", key="chat_input")
+prompt_text = st.chat_input("Chat with SCGELING-AI-1!", key="chat_input")
 
 if prompt_text == "" and retry == False:
     print("\n== Clean ==\n")
