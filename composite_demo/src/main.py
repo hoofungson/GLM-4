@@ -29,7 +29,7 @@ from utils import extract_pdf, extract_docx, extract_pptx, extract_text
 
 
 CHAT_MODEL_PATH = os.environ.get("CHAT_MODEL_PATH", "/mnt/workspace/.cache/modelscope/hub/ZhipuAI/scgeling-ai-indentity")
-VLM_MODEL_PATH = os.environ.get("VLM_MODEL_PATH", "/mnt/workspace/.cache/modelscope/hub/ZhipuAI/SCGELING-AI-1v-9b")
+VLM_MODEL_PATH = os.environ.get("VLM_MODEL_PATH", "/mnt/workspace/.cache/modelscope/hub/ZhipuAI/glm-4v-9b")
 
 USE_VLLM = os.environ.get("USE_VLLM", "0") == "1"
 USE_API = os.environ.get("USE_API", "0") == "1"
